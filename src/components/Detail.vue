@@ -18,7 +18,7 @@
 </template>
 
 <script>
-//const axios = require('axios')
+const axios = require('axios')
 
 export default {
   created() {
@@ -46,13 +46,13 @@ export default {
         });
     },
     findCategory: function(id) {
-      fetch("http://localhost:8000/api/category/" + id + "/?format=json")
-        .then(res => res.json())
+      axios.get("http://localhost:8000/api/category/" + id + "/?format=json")
+        //.then(res => res.json())
         .then(res => (this.category = res.data));
     },
     findType: function(id) {
-      fetch("http://localhost:8000/api/type/" + id + "/?format=json")
-        .then(res => res.json())
+      axios.get("http://localhost:8000/api/type/" + id + "/?format=json")
+        //.then(res => res.json())
         .then(res => (this.type = res.data));
     }
   }
