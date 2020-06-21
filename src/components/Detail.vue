@@ -1,8 +1,8 @@
 <template>
   <div>
-  <b-card :title="element.title">
+  <b-card>
+  <h1>:title="element.title"></h1>
     <b-card-text>{{element.description}}</b-card-text>
-
 </b-card>
 </div>
 </template>
