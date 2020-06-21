@@ -1,17 +1,28 @@
 <template>
   <div>
 
-    <div class= "box" v-for="e in elements" v-bind:key="e.id">
-      {{ e.title }}
-  </div>
+    <div v-for="e in elements" v-bind:key="e.id">
+      <b-card
+        :title="e.title"
+      >
 
-  <button v-on:click="findAll">Click</button>
+      <b-card-text>
+        {{e.description}}
+      </b-card-text>
+
+      </b-card>
+
+  </div>
   
   </div>
 </template>
 
 <script>
 export default {
+
+    created() {
+      this.findAll()
+    },
   data(){
     return {
       elements: []
@@ -20,8 +31,8 @@ export default {
   methods: {
     findAll: function(){
       fetch('http://127.0.0.1:8000/api/element/?format=json')
-      .then(res => res.json())
-      .then(res => this.elements = res)
+        .then(res => res.json())
+        .then(res => this.elements = res)
     }
   },
 }
