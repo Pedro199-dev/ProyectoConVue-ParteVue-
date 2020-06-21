@@ -1,8 +1,6 @@
 <template>
   <div class="container">
 
-
-  <router-link to="/detail">Detail</router-link>
     
     <div v-for="e in elements" v-bind:key="e.id">
       <router-link :to=" '/detail/' + e.id">
