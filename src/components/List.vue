@@ -1,18 +1,7 @@
 <template>
-  <div>
+  <div class="container">
 
-    <div v-for="e in elements" v-bind:key="e.id">
-      <b-card
-        :title="e.title"
-      >
-
-      <b-card-text>
-        {{e.description}}
-      </b-card-text>
-
-      </b-card>
-
-  </div>
+    <b-table striped hover :items="elements" :fields="fields"></b-table>
   
   </div>
 </template>
@@ -25,6 +14,36 @@ export default {
     },
   data(){
     return {
+      fields:[
+        {
+          key:'id',
+          sortable: true
+        },
+        {
+          key:'title',
+          sortable: false
+        },
+        {
+          key:'url_clean',
+          label:'Url limpia',
+          sortable: true,
+          variant: 'danger'
+        },
+        {
+          key:'description',
+          sortable: true
+        },
+        {
+          key:'category',
+          sortable: true
+        },
+        {
+          key:'type',
+          sortable: true
+        },
+
+
+      ],
       elements: []
     };
   },
