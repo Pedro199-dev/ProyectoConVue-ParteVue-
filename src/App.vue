@@ -1,23 +1,21 @@
 <template>
   <div id="app">
     <Header/>
-    <List/>
+
+    <router-link to="/">List</router-link>
+    <router-link to="/detail">Detail</router-link>
+
+     <router-view></router-view>
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
 
-import List from './components/List'
 import Header from './components/Header'
-//import Detail from './components/Detail'
-
 export default {
   name: 'App',
   components: {
-    List,
-    Header,
-    //Detail
+    Header
   }
 }
 </script>
