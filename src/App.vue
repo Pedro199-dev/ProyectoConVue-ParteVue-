@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <List></List>
+    <Header/>
+    <List/>
   </div>
 </template>
 
@@ -8,11 +9,15 @@
 //import HelloWorld from './components/HelloWorld.vue'
 
 import List from './components/List'
+import Header from './components/Header'
+//import Detail from './components/Detail'
 
 export default {
   name: 'App',
   components: {
-    List
+    List,
+    Header,
+    //Detail
   }
 }
 </script>
