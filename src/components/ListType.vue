@@ -30,13 +30,13 @@ export default {
         .then(res => (this.elements = res));
     }
   },
+  watch: {
+    "$route.params.id": function() {
+      console.log("Listado de categorías");
+      this.findAll();
+    }
+  }
 
-//   watch: {
-//     "$route.params.id": function() {
-//       console.log("Listado de categorías");
-//       this.findAll();
-//     }
-//   }
  };
 </script>
 

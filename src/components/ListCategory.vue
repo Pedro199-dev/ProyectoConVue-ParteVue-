@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
   <ListDefault  :elements-list="elements"/>
   </div>
 </template>
@@ -29,14 +29,13 @@ export default {
     }
   },
 
-}
-//   watch: {
-//     "$route.params.id": function() {
-//       console.log("Listado de categorías");
-//       this.findAll();
-//     }
-//   }
-// };
+  watch: {
+    "$route.params.id": function() {
+      console.log("Listado de categorías");
+      this.findAll();
+    }
+  }
+};
 </script>
 
 <style >
